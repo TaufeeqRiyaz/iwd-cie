@@ -59,16 +59,23 @@
             const ia1Marks = parseInt(document.getElementById("ia1Marks").value);
             const miniProjectMarks = parseInt(document.getElementById("miniProjectMarks").value);
             const quiz1Marks = parseInt(document.getElementById("quiz1").value);
-
+    
             // Calculate sum of all quiz and activity marks
             const sumQuizActivityMarks = quiz1Marks; // Add other quiz and activity marks similarly
-
+    
             // Calculate final internal marks using the given formula
             const finalInternalMarks = ia1Marks + miniProjectMarks + ((sumQuizActivityMarks / 120) * 20);
-
+    
             // Display the result
-            document.getElementById("result").innerHTML = `<h3>Final Internal Marks: ${finalInternalMarks}</h3>`;
+            const resultElement = document.getElementById("result");
+    
+            if (finalInternalMarks < 28) {
+                resultElement.innerHTML = `<h3 style="color: red;">Result: Fail</h3>`;
+            } else {
+                resultElement.innerHTML = `<h3 style="color: green;">Result: Pass</h3>`;
+            }
         }
     </script>
+    
 </body>
 </html>
