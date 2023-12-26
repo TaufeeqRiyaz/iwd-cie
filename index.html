@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,9 +33,10 @@
         }
     </style>
 </head>
+
 <body>
     <h2>IWD Internal Marks Calculator</h2>
-    
+
     <label for="ia1Marks">IA 1 Marks:</label>
     <input type="number" id="ia1Marks" required>
 
@@ -44,7 +46,7 @@
     <!-- Quiz and Activity Marks -->
     <h3>Quiz and Activity Marks</h3>
 
-    <label for="quiz1">Sum of all quizes and activities:</label>
+    <label for="quiz1">Sum of all quizzes and activities:</label>
     <input type="number" id="quiz1" required>
 
     <!-- Add similar input fields for other quizzes and activities -->
@@ -59,28 +61,33 @@
             const ia1Marks = parseInt(document.getElementById("ia1Marks").value);
             const miniProjectMarks = parseInt(document.getElementById("miniProjectMarks").value);
             const quiz1Marks = parseInt(document.getElementById("quiz1").value);
-    
+
             // Calculate sum of all quiz and activity marks
             const sumQuizActivityMarks = quiz1Marks; // Add other quiz and activity marks similarly
-    
+
             // Calculate final internal marks using the given formula
             const finalInternalMarks = ia1Marks + miniProjectMarks + ((sumQuizActivityMarks / 120) * 20);
-    
+
             // Display the result
             const resultElement = document.getElementById("result");
-    
+
             let resultMessage = `<h3>Final Internal Marks: ${finalInternalMarks}</h3>`;
-    
+
             if (finalInternalMarks < 28) {
                 resultMessage += `<h3 style="color: red;">Result: Fail</h3>`;
+                resultMessage += `<button onclick="redirectToYouTube()">Click here to pass</button>`;
             } else {
                 resultMessage += `<h3 style="color: green;">Result: Pass</h3>`;
             }
-    
+
             resultElement.innerHTML = resultMessage;
         }
-    </script>
-    
-</body>
-</html>
 
+        function redirectToYouTube() {
+            window.location.href = "https://www.youtube.com/watch?v=GtL1huin9EE";
+        }
+    </script>
+
+</body>
+
+</html>
