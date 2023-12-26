@@ -69,13 +69,18 @@
             // Display the result
             const resultElement = document.getElementById("result");
     
+            let resultMessage = `<h3>Final Internal Marks: ${finalInternalMarks}</h3>`;
+    
             if (finalInternalMarks < 28) {
-                resultElement.innerHTML = `<h3 style="color: red;">Result: Fail</h3>`;
+                resultMessage += `<h3 style="color: red;">Result: Fail</h3>`;
             } else {
-                resultElement.innerHTML = `<h3 style="color: green;">Result: Pass</h3>`;
+                resultMessage += `<h3 style="color: green;">Result: Pass</h3>`;
             }
+    
+            resultElement.innerHTML = resultMessage;
         }
     </script>
     
 </body>
 </html>
+
